@@ -1,3 +1,5 @@
+import webbrowser
+
 from fpdf import FPDF as PDF
 
 
@@ -44,3 +46,4 @@ class PdfReport:
         pdf.cell(w=30, h=20, txt=f"Total bill is {self.bill}", ln=1)
         # Report output
         pdf.output(f"report for {self.month} {year}.pdf")
+        webbrowser.open(f"report for {self.month} {year}.pdf")
